@@ -27,7 +27,7 @@ def webServer(port=13331):
 
                 # Send one HTTP header line into socket.
                 # Fill in start
-                connectionSocket.send("\HTTP/1.1 200 OK".encode())
+                connectionSocket.send("\HTTP/1.1 200 OK\r\n".encode())
                 # Fill in end
                 # Send the content of the requested file to the client
                 for i in range(0, len(outputdata)):
@@ -38,7 +38,7 @@ def webServer(port=13331):
             except IOError:
         # Send response message for file not found (404)
         # Fill in start
-                connectionSocket.send("\HTTP/1.1 404 Not Found".encode())
+                connectionSocket.send("\HTTP/1.1 404 Not Found\r\n".encode())
         # Fill in end
 
         # Close client socket
