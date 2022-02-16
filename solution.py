@@ -7,14 +7,15 @@ import sys
 def webServer(port=13331):
     serverSocket = socket(AF_INET, SOCK_STREAM)
     # Prepare a server socket
-    serverSocket.bind(("", port))
     # Fill in start
+    serverSocket.bind(("", port))
+    
     # Fill in end
 
     while True:
         # Establish the connection
         # print('Ready to serve...')
-        print("The server is ready to receive")
+        print("Ready to serve...")
         connectionSocket, addr = serverSocket.accept()# Fill in start      #Fill in end
         try:
 
