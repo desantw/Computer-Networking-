@@ -28,8 +28,8 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Send MAIL FROM command and handle server response.
     # Fill in start
     mailfrom = 'Mail From:<wld233@nyu.edu>'
-    clientSocket.send(mailfrom)
-    recv2 = clientSocket.recv(1024)
+    clientSocket.send(mailfrom.encode())
+    recv2 = clientSocket.recv(1024).decode()
     print(recv2)
     if recv2[:3] != '250':
         print('250 reply not received from server.')
@@ -38,8 +38,8 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Send RCPT TO command and handle server response.
     # Fill in start
     rccptto = 'RCPT To: <wld233@nyu.edu>'
-    clientSocket.send(rccptto)
-    recv3 = clientSocket.recv(1024)
+    clientSocket.send(rccptto.encode())
+    recv3 = clientSocket.recv(1024).decode()
     print(recv3)
     if recv3[:3] != '250':
         print('250 reply not received from server.')
@@ -48,8 +48,8 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Send DATA command and handle server response.
     # Fill in start
     data = 'DATA'
-    clientSocket.send(data)
-    recv4 = clientSocket.recv(1024)
+    clientSocket.send(data.encode())
+    recv4 = clientSocket.recv(1024).decode()
     print(recv4)
     if recv4[:3] != '354':
         print('354 reply not received from server.')
@@ -64,8 +64,8 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
 
     # Message ends with a single period, send message end and handle server response.
     # Fill in start
-    clientSocket.send(endmsg)
-    recv5 = clientSocket.recv(1024)
+    clientSocket.send(endmsg.encode())
+    recv5 = clientSocket.recv(1024).decode()
     print(recv5)
     if recv5[:3] != '250':
         print('250 reply not received from server.')
@@ -74,8 +74,8 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Send QUIT command and handle server response.
     # Fill in start
     Quit = 'QUIT'
-    clientSocket.send(Quit)
-    recv6 = clientSocket.recv(1024)
+    clientSocket.send(Quit.encode())
+    recv6 = clientSocket.recv(1024).decode()
     print(recv6)
     if recv6[:3] != '250':
         print('250 reply not received from server.')
