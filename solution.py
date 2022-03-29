@@ -52,7 +52,7 @@ def receiveOnePing(mySocket, ID, timeout, destAddr):
         requestType, code, revChecksum, revId, revSequence = struct.unpack('bbHHh', icmpheader)
         if ID == revId:
             bytesInDouble = struct.calcsize('d')
-            timeData = struct.unpack('d', recPacket[20:28 + bytesInDouble])[0]
+            timeData = struct.unpack('d', recPacket[28:28 + bytesInDouble])[0]
             timeRTT.append(timeReceived - timeData)
             packageRev += 1
             return timeReceived - timeData
