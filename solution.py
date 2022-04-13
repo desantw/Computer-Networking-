@@ -106,12 +106,6 @@ def doOnePing(destAddr, timeout):
 
 
 def ping(host, timeout=1):
-    global rttMin, rttMax, rttSum, rttCnt
-    rttMin = float('+inf')
-    rttMax = float('-inf')
-    rttSum = 0
-    rttCnt = 0
-    cnt = 0
     # timeout=1 means: If one second goes by without a reply from the server,
     # the client assumes that either the client's ping or the server's pong is lost
     dest = gethostbyname(host)
@@ -129,4 +123,4 @@ def ping(host, timeout=1):
     # You should have the values of delay for each ping here; fill in calculation for packet_min, packet_avg, packet_max, and stdev
     # vars = [str(round(packet_min, 8)), str(round(packet_avg, 8)), str(round(packet_max, 8)),str(round(stdev(stdev_var), 8))]
 
-ping("127.0.0.1")
+    return vars
