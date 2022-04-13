@@ -125,4 +125,3 @@ def ping(host, timeout=1):
 
     return vars
 
-ping("127.0.0.1")
