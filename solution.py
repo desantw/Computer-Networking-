@@ -78,7 +78,7 @@ def get_route(hostname):
             #Fill in start
             # Make a raw socket named mySocket
             icmp = getprotobyname("icmp")
-            mySocket = socket(AF_INET, SOCK_DGRAM, icmp)
+            mySocket = socket(AF_INET, SOCK_RAW, icmp)
             #Fill in end
 
             mySocket.setsockopt(IPPROTO_IP, IP_TTL, struct.pack('I', ttl))
@@ -124,6 +124,7 @@ def get_route(hostname):
                     #Fill in end
                 except herror:   #if the host does not provide a hostname
                     #Fill in start
+                    msg = "test"
                     Hostname = "(hostname not returnable:" + str(msg) + ")"
                     #Fill in end
 
