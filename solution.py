@@ -120,7 +120,7 @@ def ping(host, timeout=1):
         delay = doOnePing(dest, timeout)
         print(delay)
         time.sleep(1)
-        return delay# one second
+        one second
 
     # You should have the values of delay for each ping here; fill in calculation for packet_min, packet_avg, packet_max, and stdev
     packet_min = min(val) * 1000
