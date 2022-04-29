@@ -115,13 +115,18 @@ def ping(host, timeout=1):
 
     # Send ping requests to a server separated by approximately one second
     # Add something here to collect the delays of each ping in a list so you can calculate vars after your ping
-
+    list = []
+    val = list 
+    
     for i in range(0, 4):  # Four pings will be sent (loop runs for i=0, 1, 2, 3)
         delay = doOnePing(dest, timeout)
         print(delay)
         time.sleep(1)
+        list.amend(delay)
         #one second
+        
 
+    
     # You should have the values of delay for each ping here; fill in calculation for packet_min, packet_avg, packet_max, and stdev
     packet_min = min(val) * 1000
     packet_avg = sum(val) / len(val) * 1000
